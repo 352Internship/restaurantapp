@@ -1,4 +1,4 @@
 # served-app
 352 Internship Restaurant App
 
-Documentation here!
+Something else instead, then docs
