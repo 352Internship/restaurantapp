@@ -1,4 +1,4 @@
 # served-app
 352 Internship Restaurant App
 
-Something else instead
+Something else instead, then docs
