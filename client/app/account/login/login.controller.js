@@ -1,7 +1,6 @@
 'use strict';
 
-export default class LoginController {
-  /*@ngInject*/
+class LoginController {
   constructor(Auth, $state) {
     this.user = {};
     this.errors = {};
@@ -29,3 +28,6 @@ export default class LoginController {
     }
   }
 }
+
+angular.module('served2App')
+  .controller('LoginController', LoginController);

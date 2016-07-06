@@ -1,14 +1,10 @@
 'use strict';
 
-import main from './main.component';
-import {
-  MainController
-} from './main.component';
+describe('Component: mainComponent', function() {
 
-describe('Component: MainComponent', function() {
-
-  beforeEach(angular.mock.module(main));
-  beforeEach(angular.mock.module('stateMock'));
+  // load the controller's module
+  beforeEach(module('served2App'));
+  beforeEach(module('stateMock'));
 
   var scope;
   var mainComponent;

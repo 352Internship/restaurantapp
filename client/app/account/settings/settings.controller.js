@@ -1,8 +1,7 @@
 'use strict';
 
-export default class SettingsController {
+class SettingsController {
 
-  /*@ngInject*/
   constructor(Auth) {
     this.Auth = Auth;
   }
@@ -23,3 +22,6 @@ export default class SettingsController {
     }
   }
 }
+
+angular.module('served2App')
+  .controller('SettingsController', SettingsController);

@@ -1,8 +1,8 @@
-@import '~bootstrap/less/bootstrap.less';
-@import '~font-awesome/less/font-awesome.less';
+@import '../bower_components/bootstrap/less/bootstrap.less';
+@import '../bower_components/font-awesome/less/font-awesome.less';
 
-@icon-font-path: '/assets/fonts/bootstrap/';
-@fa-font-path: '/assets/fonts/font-awesome/';
+@icon-font-path: '../bower_components/bootstrap/fonts/';
+@fa-font-path: '../bower_components/font-awesome/fonts';
 
 /**
  * App-wide Styles
@@ -16,6 +16,8 @@
 }
 
 /* inject:less */
-@import 'admin/admin.less';
-@import 'main/main.less';
+@import 'admin/admin';
+@import 'main/main';
+@import '../components/footer/footer';
+@import '../components/modal/modal';
 /* endinject */

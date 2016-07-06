@@ -6,7 +6,7 @@ module.exports = {
 
   // MongoDB connection options
   mongo: {
-    uri: 'mongodb://localhost/served-dev'
+    uri: 'mongodb://localhost/served2-dev'
   },
 
   // Seed database on startup
