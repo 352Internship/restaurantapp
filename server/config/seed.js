@@ -8,6 +8,7 @@ import Thing from '../api/thing/thing.model';
 import User from '../api/user/user.model';
 import Category from '../api/category/category.model'
 import MenuItem from '../api/menuItem/menuItem.model'
+import Order from '../api/order/order.model'
 
 Thing.find({}).remove()
 .then(() => {
@@ -73,6 +74,19 @@ MenuItem.find({}).remove()
       'Sausage',
       'Extra Cheese'],
     featured: true
+  });
+});
+
+Order.find({}).remove()
+.then(() => {
+  Order.create({
+    items: [{
+      quantity: 1,
+      price: 9.99,
+      discout: 0
+    }],
+    totalPrice: 9.99,
+    specialInstructions: 'No Cheese'
   });
 });
 
