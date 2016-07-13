@@ -12,6 +12,7 @@ var UserSchema = new Schema({
     lowercase: true,
     required: true
   },
+  phoneNumber: String, 
   role: {
     type: String,
     default: 'user'

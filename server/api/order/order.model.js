@@ -11,6 +11,7 @@ var OrderSchema = new mongoose.Schema({
   }],
   totalPrice: Number,
   specialInstructions: String,
+  customer: Schema.Types.ObjectId,
   active: {
     type: Boolean,
     default: true
