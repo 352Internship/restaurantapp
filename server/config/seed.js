@@ -7,6 +7,7 @@
 import Thing from '../api/thing/thing.model';
 import User from '../api/user/user.model';
 import Category from '../api/category/category.model'
+import MenuItem from '../api/menuItem/menuItem.model'
 
 Thing.find({}).remove()
 .then(() => {
@@ -43,16 +44,38 @@ Thing.find({}).remove()
 Category.find({}).remove()
 .then(() => {
   Category.create({
-    name: 'Appetizers',
-    info: "You eat these when you are really hungry want food while you wait."
+    title: 'Appetizers',
+    description: "You eat these when you are really hungry want food while you wait."
   }, {
-    name: 'Lunch',
-    info: 'This is that meal that comes between breakfast and dinner.'
+    title: 'Lunch',
+    description: 'This is that meal that comes between breakfast and dinner.'
   }, {
-    name: 'Breakfast',
-    info: 'The first thing you do when you get up.'
+    title: 'Breakfast',
+    description: 'The first thing you do when you get up.'
   });
 });
+
+MenuItem.find({}).remove()
+.then(() => {
+  MenuItem.create({
+    title: 'Cheese Burger',
+    description: 'A yummy beef patty, lettuce, cheese, pickles, and onions',
+    price: 9.99,
+    featured: false
+  }, {
+    title: 'Pizza',
+    description: 'A 12" pizza, choose up to 3 toppings',
+    price: 12.99,
+    options: [
+      'Pepperoni',
+      'Ham',
+      'Pinapple',
+      'Sausage',
+      'Extra Cheese'],
+    featured: true
+  });
+});
+
 
 User.find({}).remove()
 .then(() => {
