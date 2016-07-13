@@ -8,7 +8,6 @@ import Thing from '../api/thing/thing.model';
 import User from '../api/user/user.model';
 import Category from '../api/category/category.model'
 import MenuItem from '../api/menuItem/menuItem.model'
-import Order from '../api/order/order.model'
 
 Thing.find({}).remove()
 .then(() => {
