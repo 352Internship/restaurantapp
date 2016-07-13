@@ -59,7 +59,7 @@ function handleError(res, statusCode) {
   };
 }
 
-// Gets a list of Categorys
+// Gets a list of Categories
 export function index(req, res) {
   return Category.find().exec()
     .then(respondWithResult(res))

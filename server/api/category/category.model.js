@@ -3,9 +3,12 @@
 import mongoose from 'mongoose';
 
 var CategorySchema = new mongoose.Schema({
-  name: String,
-  info: String,
-  active: Boolean
+  title: String,
+  description: String,
+  active: {
+    type: Boolean,
+    default: true
+  }
 });
 
 export default mongoose.model('Category', CategorySchema);
