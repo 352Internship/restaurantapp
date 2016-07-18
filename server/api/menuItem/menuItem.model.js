@@ -8,6 +8,7 @@ var MenuItemSchema = new mongoose.Schema({
   price: Number,
   options: [String],
   featured: Boolean,
+  imageURL: String,
   category: [{ type: Schema.Types.ObjectId, ref: 'Category' }],
   discountAmount: {
     type: Number,
