@@ -3,8 +3,8 @@
 (function(){
 
 class CategoryComponent {
-  constructor() {
-    this.message = 'Hello';
+  constructor($state) {
+    this.$state = $state;
   }
 }
 
