@@ -68,7 +68,7 @@ export function index(req, res) {
 
 // Gets a single Restaurant from the DB
 export function show(req, res) {
-  return Restaurant.findById(req.params.id).exec()
+  return Restaurant.findById(req.params.id).populate('owner', 'name email').exec()
     .then(handleEntityNotFound(res))
     .then(respondWithResult(res))
     .catch(handleError(res));
