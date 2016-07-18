@@ -19,7 +19,7 @@
           <h1 class="page-header"><h1>Menu:</h1>
           <div class="main-menu">
             <div ng-repeat="cat in $ctrl.categories" class="col-md-4">
-              <a ui-sref="category({ id: cat._id })" title="{{ cat.description }}">
+              <a ui-sref="category({ categoryId: cat._id })" title="{{ cat.description }}">
                 <img src="/assets/images/appitizers.jpg" alt="image/" class="apps img-full">
                 <h3>{{ cat.title }}</h3>
               </a>

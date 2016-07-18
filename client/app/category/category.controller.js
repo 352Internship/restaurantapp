@@ -3,8 +3,16 @@
 (function(){
 
 class CategoryComponent {
-  constructor($state) {
+  constructor($state, Category) {
     this.$state = $state;
+    this.Category = Category;
+  }
+
+
+  $onInit() {
+    this.Category.get({categoryId: this.$state.params.categoryId }, function(data) {
+      console.log(data)
+    });
   }
 }
 
