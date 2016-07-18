@@ -4,9 +4,10 @@
 
   class MainController {
 
-    constructor($http) {
+    constructor($http, Category) {
       this.$http = $http;
-      this.awesomeThings = [];
+      this.Category = Category;
+      this.categories = [];
     }
 
     $onInit() {
@@ -14,6 +15,8 @@
         .then(response => {
           this.awesomeThings = response.data;
         });
+
+      this.Category.query(r => this.categories = r );
     }
 
     addThing() {
