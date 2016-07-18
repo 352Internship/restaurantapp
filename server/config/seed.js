@@ -83,7 +83,7 @@ Order.find({}).remove()
     items: [{
       quantity: 1,
       price: 9.99,
-      discout: 0
+      discount: 0
     }],
     totalPrice: 9.99,
     specialInstructions: 'No Cheese'
