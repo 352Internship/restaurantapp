@@ -4,14 +4,14 @@ import mongoose, {Schema} from 'mongoose';
 
 var OrderSchema = new mongoose.Schema({
   items: [{
-    menuItem: Schema.Types.ObjectId,
+    menuItem: { type: Schema.Types.ObjectId, ref: 'MenuItem' },
     quantity: Number,
     price: Number,
     discount: Number
   }],
   totalPrice: Number,
   specialInstructions: String,
-  customer: Schema.Types.ObjectId,
+  customer: { type: Schema.Types.ObjectId, ref: 'User' },
   active: {
     type: Boolean,
     default: true

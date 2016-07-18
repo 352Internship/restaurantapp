@@ -12,6 +12,7 @@ var RestaurantSchema = new mongoose.Schema({
   hours: String,
   phone: String,
   email: String,
+  imageURL: String,
   owner: [{ type: Schema.Types.ObjectId, ref: 'User' }],
   active: {
     type: Boolean,
