@@ -3,11 +3,15 @@
 (function() {
 
   class AdminController {
-    constructor(User, MenuItem) {
+    constructor(User, MenuItem, $http) {
       // Use the User $resource to fetch all users
       // Use the MenuItem $resource to fetch all menuItems
       this.users = User.query();
       this.menuItems = MenuItem.query();
+
+      this.$http = $http;
+
+      this.newMenuItem = '';
     }
 
     deleteUser(user) {
@@ -16,12 +20,20 @@
     }
 
     deleteMenuItem(menuItem) {
-      console.log(menuItem);
-      menuItem.$remove();
+      this.$http.delete('/api/menuItems/' + menuItem._id);
       this.menuItems.splice(this.menuItems.indexOf(menuItem), 1);
     }
+
+    addMenuItem() {
+      if (this.newMenuItem) {
+        this.$http.post('/api/menuItems', this.newMenuItem);
+        this.menuItems.push(this.newMenuItem);
+        this.newMenuItem = '';
+      }
+    }
+
   }
 
   angular.module('served2App.auth')
-    .controller('AdminController', AdminController);
+  .controller('AdminController', AdminController);
 })();
