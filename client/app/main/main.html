@@ -18,21 +18,10 @@
         <div class="row">
           <h1 class="page-header"><h1>Menu:</h1>
           <div class="main-menu">
-            <div class="col-md-4">
-              <a href="">
+            <div ng-repeat="cat in $ctrl.categories" class="col-md-4">
+              <a ui-sref="category({ id: cat._id })" title="{{ cat.description }}">
                 <img src="/assets/images/appitizers.jpg" alt="image/" class="apps img-full">
-                <h3>Apps</h3>
-              </a>
-            </div>
-            <div class="col-md-4">
-              <a href="">
-                <img src="/assets/images/entrees.jpg" alt="image/"  class="entree img-full">
-                <h3>Entree</h3>
-              </a>
-            </div>
-            <div class="col-md-4">
-              <a href=""><img src="/assets/images/beverages.png" alt="image/" class="beverage img-full">
-                <h3>Beverages</h3>
+                <h3>{{ cat.title }}</h3>
               </a>
             </div>
           </div>
