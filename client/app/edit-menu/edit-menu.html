@@ -12,12 +12,12 @@
               Title: <input type="text" ng-model="item.title"></br>
               Description: <input type="text" ng-model="item.description"></br>
               Price: <input type="number" ng-model="item.price"></br>
-              <!-- Options -->
-              <!-- Featured -->
-              Image Url: <input type="text" ng-model="item.imageUrl"></br>
+              <!-- Options: -->
+              Featured: <input type="checkbox" ng-model="item.featured"></br>
+              Image Url: <input type="text" ng-model="item.imageURL"></br>
               <!-- Category -->
               Discount: <input type="number" ng-model="item.discountAmount"></br>
-              <!-- Active -->
+              Active: <input type="checkbox" ng-model="item.active"></br>
               <button ng-click="EditMenu.editMenuItem(item); showDetails = !showDetails">Save Item</button>
             </div>
           </div>
@@ -30,11 +30,11 @@
           Description <input type="text" ng-model="EditMenu.newMenuItem.description"></br>
           Price <input type="number" ng-model="EditMenu.newMenuItem.price"></br>
           <!-- Options -->
-          <!-- Featured -->
-          Image Url: <input type="text" ng-model="EditMenu.newMenuItem.imageUrl"></br>
+          Featured: <input type="checkbox" ng-model="EditMenu.newMenuItem.featured"></br>
+          Image Url: <input type="text" ng-model="EditMenu.newMenuItem.imageURL"></br>
           <!-- Category -->
           Discount <input type="number" ng-model="EditMenu.newMenuItem.discountAmount"></br>
-          <!-- Active -->
+          Active: <input type="checkbox" ng-model="EditMenu.newMenuItem.active"></br>
           <button ng-click="EditMenu.addMenuItem(EditMenu.newMenuItem); showNewMenuItemInput = !showNewMenuItemInput">Add Item</button>
         </div>
       </ul>
