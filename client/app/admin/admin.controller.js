@@ -12,6 +12,7 @@
       this.$http = $http;
 
       this.newMenuItem = '';
+      // this.oldMenuItem = '';
     }
 
     deleteUser(user) {
@@ -29,6 +30,14 @@
         this.$http.post('/api/menuItems', this.newMenuItem);
         this.menuItems.push(this.newMenuItem);
         this.newMenuItem = '';
+      }
+    }
+
+    editMenuItem(item) {
+      console.log(item);
+      if (item) {
+        this.$http.put('/api/menuItems/' + item._id, item);
+        this.menuItems.splice(this.menuItems.indexOf(item), 1, item)
       }
     }
 
