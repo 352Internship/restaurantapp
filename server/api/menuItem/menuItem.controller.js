@@ -100,3 +100,10 @@ export function destroy(req, res) {
     .then(removeEntity(res))
     .catch(handleError(res));
 }
+
+// Gets all MenuItems by their Category Id
+export function findByCategory(req, res) {
+  return MenuItem.find({category: req.params.categoryId}).exec()
+    .then(respondWithResult(res))
+    .catch(handleError(res));
+}
