@@ -12,43 +12,5 @@
         </li>
       </ul>
     </li>
-    <li class="list-group-item"> <strong>Edit Menu Items</strong>
-      <button ng-click="showNewMenuItemInput = !showNewMenuItemInput">Create</button>
-      <ul class="list-group menuItem-list">
-        <li class="list-group-item" ng-repeat="item in admin.menuItems">
-          <div class="menuItem-info">
-            <strong>{{item.title}} ${{item.price}}</strong><br>
-            <span class="text-muted">{{item.description}}</span></br>
-            <div class="editMenuItem-info" ng-class="{ 'hidden': ! showDetails }">
-              Title: <input type="text" ng-model="item.title"></br>
-              Description: <input type="text" ng-model="item.description"></br>
-              Price: <input type="number" ng-model="item.price"></br>
-              <!-- Options -->
-              <!-- Featured -->
-              <!-- Image -->
-              <!-- Category -->
-              Discount: <input type="number" ng-model="item.discountAmount"></br>
-              <!-- Active -->
-              <button ng-click="admin.editMenuItem(item); showDetails = ! showDetails">Edit Item</button>
-            </div>
-          </div>
-          <a ng-click="showDetails = ! showDetails" class="edit"><span class="fa fa-edit fa-2x"></span></a>
-          &nbsp;
-          <a ng-click="admin.deleteMenuItem(item)" class="trash"><span class="fa fa-trash fa-2x"></span></a>
-        </li>
-        <div class="newMenuItem-info animate-show" ng-show="showNewMenuItemInput">
-          Title <input type="text" ng-model="admin.newMenuItem.title"></br>
-          Description <input type="text" ng-model="admin.newMenuItem.description"></br>
-          Price <input type="number" ng-model="admin.newMenuItem.price"></br>
-          <!-- Options -->
-          <!-- Featured -->
-          <!-- Image -->
-          <!-- Category -->
-          Discount <input type="number" ng-model="admin.newMenuItem.discountAmount"></br>
-          <!-- Active -->
-          <button ng-click="admin.addMenuItem(); showNewMenuItemInput = !showNewMenuItemInput">Add Item</button>
-        </div>
-      </ul>
-    </li>
   </ul>
 </div>
