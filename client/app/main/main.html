@@ -16,11 +16,17 @@
     <div class="row">
       <div class="col-md-12">
         <div class="row">
+
+          <!-- Application instructions -->
+
+
+
+          <!-- End Application instructions -->
           <h1 class="page-header"><h1>Menu:</h1>
           <div class="main-menu">
             <div ng-repeat="cat in $ctrl.categories" class="col-md-4">
               <a ui-sref="category({ id: cat._id })" title="{{ cat.description }}">
-                <img src="/assets/images/appitizers.jpg" alt="image/" class="apps img-full">
+                <img src="/assets/images/appitizers.jpg" alt="image/" class="apps">
                 <h3>{{ cat.title }}</h3>
               </a>
             </div>
