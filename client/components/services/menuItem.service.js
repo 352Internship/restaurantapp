@@ -5,6 +5,8 @@
   function MenuItemResource($resource) {
     return $resource('/api/menuItems/:id', {
       id: '@_id'
+    }, {
+      'update': { method: 'PUT' }
     });
   }
 
