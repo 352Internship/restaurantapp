@@ -12,7 +12,6 @@
       this.$http = $http;
 
       this.newMenuItem = '';
-      // this.oldMenuItem = '';
     }
 
     deleteUser(user) {
