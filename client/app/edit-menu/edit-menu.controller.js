@@ -4,13 +4,9 @@
 
 class EditMenuComponent {
 
-  constructor(MenuItem, $http) {
-    this.menuItem = MenuItem;
+  constructor(MenuItem) {
+    this.MenuItem = MenuItem;
     this.menuItems = MenuItem.query();
-
-    this.$http = $http;
-
-    this.newMenuItem = '';
   }
 
   deleteMenuItem(menuItem) {
@@ -25,10 +21,10 @@ class EditMenuComponent {
       });
   }
 
-  addMenuItem() {
-    if (this.newMenuItem) {
-      this.menuItem
-        .save(this.newMenuItem)
+  addMenuItem(newMenuItem) {
+    if (newMenuItem) {
+      this.MenuItem
+        .save(newMenuItem)
         .$promise
         .then(item => this.menuItems.push(item))
         .then(() => this.newMenuItem = {} )
@@ -37,10 +33,12 @@ class EditMenuComponent {
   }
 
   editMenuItem(item) {
-    console.log(item);
     if (item) {
-      this.$http.put('/api/menuItems/' + item._id, item);
-      this.menuItems.splice(this.menuItems.indexOf(item), 1, item)
+      this.MenuItem
+        .update(item)
+        .$promise
+        .then()
+        .catch(() => alert('Editing menu item failed.'));
     }
   }
 }
