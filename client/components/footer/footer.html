@@ -1,6 +1,7 @@
 <div class="container">
   <p>
-<a ui-sref="admin">Admin Login</a>
+    <a ui-sref="admin">Admin Login</a>
+    <a ng-show="FooterCtrl.isAdmin()" ui-sref="editMenu">Edit Menu</a>
   </p>
   <!-- <p>Angular Fullstack v3.7.6 |
     <a href="https://twitter.com/tyhenkel">@tyhenkel</a> |
