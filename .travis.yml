@@ -1,6 +1,11 @@
 language: node_js
 node_js:
   - "6.2"
+branches:
+  only:
+  - master
+services:
+  - mongodb
 deploy:
   provider: heroku
 after_success:
