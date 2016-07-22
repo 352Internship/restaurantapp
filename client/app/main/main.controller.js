@@ -8,6 +8,10 @@
       this.$http = $http;
       this.Category = Category;
       this.categories = [];
+
+      // get current cart from local storage, if there isn't one, create an empty cart
+      var cart = [];
+      getShoppingCart(cart);
     }
 
     $onInit() {
@@ -30,6 +34,13 @@
 
     deleteThing(thing) {
       this.$http.delete('/api/things/' + thing._id);
+    }
+
+    getShoppingCart(cart) {
+      if (localStorage.getItem("cart")) {
+        cart = JSON.parse(localStorage.getItem("cart"));
+      }
+      localStorage.setItem("cart", JSON.stringify(cart));
     }
   }
 
