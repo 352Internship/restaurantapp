@@ -1,42 +1,42 @@
 <header class="hero-unit" id="banner">
   <div class="container">
     <!-- <div class="col-md-3"> -->
-      <img src="/assets/images/buffalo.png" alt="image/" class="buffalo" >
-    </div>
+    <img src="/assets/images/buffalo.png" alt="image/" class="buffalo" >
+  </div>
 
-    <!-- <div class="col-md-6">
-      <h2>Buffalo Wild Wings</h2>
-      </div>
-      <div class="col-md-3">
-        <img src="/assets/images/beer.jpeg" alt="image/" class="beer"> -->
-      </div>
-    </div>
-  </header>
+  <!-- <div class="col-md-6">
+  <h2>Buffalo Wild Wings</h2>
+</div>
+<div class="col-md-3">
+<img src="/assets/images/beer.jpeg" alt="image/" class="beer"> -->
+</div>
+</div>
+</header>
 
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="row">
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="row">
 
-          <!-- Application instructions -->
-          <div class="intructions"><h2>Instructions:</h2>
-          </div>
+        <!-- Application instructions -->
+        <div class="intructions"><h2>Instructions:</h2>
         </div>
-<p>
-  Welcome! Ordering has never been easier! Using the food tiles above, you can now order exactly what you want, when you want it! Touch the tiles to view details and modify your order. When you’ve selected everything to be included in your order, use the cart in the corner to finalize your order and check out!
+      </div>
+      <p>
+        Welcome! Ordering has never been easier! Using the food tiles below, you can now order exactly what you want, when you want it! Touch the tiles to view details and modify your order. When you’ve selected everything to be included in your order, use the cart in the corner to finalize your order and check out!
 
-</p>
+      </p>
       <!-- End Application instructions -->
-          <h1 class="page-header"><h1>Menu:</h1>
-          <div class="main-menu">
-            <div ng-repeat="cat in $ctrl.categories" class="col-md-4">
-              <a ui-sref="category({ id: cat._id })" title="{{ cat.description }}">
-                <img src="/assets/images/appitizers.jpg" alt="image/" class="apps">
-                <h3>{{ cat.title }}</h3>
-              </a>
-            </div>
-          </div>
+      <h1 class="page-header"><h1>Menu:</h1>
+      <div class="main-menu">
+        <div ng-repeat="cat in $ctrl.categories" class="col-md-4">
+          <a ui-sref="category({ id: cat._id })" title="{{ cat.description }}">
+            <img src="/assets/images/appitizers.jpg" alt="image/" class="apps">
+            <h3>{{ cat.title }}</h3>
+          </a>
         </div>
       </div>
     </div>
   </div>
+</div>
+</div>
