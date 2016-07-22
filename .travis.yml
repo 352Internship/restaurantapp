@@ -13,8 +13,10 @@ services:
 cache:
   directories:
   - node_modules
+  - client/bower_components
 before_script:
 - npm install -g bower grunt-cli
+- npm install grunt
 - bower install
 # deploy:
 #   provider: heroku
