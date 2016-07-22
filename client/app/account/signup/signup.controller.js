@@ -1,9 +1,8 @@
 'use strict';
 
-export default class SignupController {
+class SignupController {
   //end-non-standard
 
-  /*@ngInject*/
   constructor(Auth, $state) {
       this.Auth = Auth;
       this.$state = $state;
@@ -37,3 +36,6 @@ export default class SignupController {
     }
   }
 }
+
+angular.module('served2App')
+  .controller('SignupController', SignupController);

@@ -1,11 +1,19 @@
 language: node_js
 node_js:
-  - 4.2.3
+  - "6.2"
 matrix:
   fast_finish: true
   allow_failures:
-    - node_js: 5.1.1
+    - node_js: 6.2.2
+branches:
+  only:
+  - master
+services:
+  - mongodb
 before_script:
   - npm install -g bower grunt-cli
   - bower install
-services: mongodb
+deploy:
+  provider: heroku
+after_success:
+  - bash ./travis/after_success.sh

@@ -7,7 +7,7 @@
 
 module.exports = {
   DOMAIN:           'http://localhost:9000',
-  SESSION_SECRET:   'served-secret',
+  SESSION_SECRET:   'served2-secret',
 
   // Control debug level for modules using visionmedia/debug
   DEBUG: ''
