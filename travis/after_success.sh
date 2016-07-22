@@ -9,8 +9,8 @@ if [[ $TRAVIS_PULL_REQUEST == "false" && $TRAVIS_BRANCH == "master" ]]
     gem install heroku
     heroku keys:clear
     echo yes | heroku keys:add
-    grunt build
-    echo yes | grunt buildcontrol:heroku
+    gulp build
+    echo yes | gulp buildcontrol:heroku
     heroku keys:clear
 fi
 if [[ $TRAVIS_PULL_REQUEST == "false" ]]

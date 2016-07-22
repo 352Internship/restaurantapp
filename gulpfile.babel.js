@@ -646,7 +646,7 @@ grunt.initConfig({
         },
         heroku: {
             options: {
-                remote: 'heroku',
+                remote: 'git@heroku.com:served-app.git',
                 branch: 'master'
             }
         },
