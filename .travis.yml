@@ -1,4 +1,9 @@
+language: node_js
+node_js:
+  - "6.2"
 deploy:
   provider: heroku
+after_success:
+  - bash ./travis/after_success.sh
   # api_key:
     # secure: "YOUR ENCRYPTED API KEY"
