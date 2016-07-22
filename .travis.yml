@@ -16,6 +16,7 @@ cache:
   - client/bower_components
 before_script:
 - npm install -g bower gulp-cli gulp
+- npm install gulp
 - npm install grunt
 - bower install
 # deploy:
