@@ -24,19 +24,17 @@
       </div>
       <p>
         Welcome! Ordering has never been easier! Using the food tiles below, you can now order exactly what you want, when you want it! Touch the tiles to view details and modify your order. When you’ve selected everything to be included in your order, use the cart in the corner to finalize your order and check out!
-
       </p>
       <!-- End Application instructions -->
       <h1 class="page-header"><h1>Menu:</h1>
       <div class="main-menu">
         <div ng-repeat="cat in $ctrl.categories" class="col-md-4">
-          <a ui-sref="category({ id: cat._id })" title="{{ cat.description }}">
-            <img src="/assets/images/appitizers.jpg" alt="image/" class="apps">
+          <a ui-sref="category({ categoryId: cat._id })" title="{{ cat.description }}">
+            <img src="/assets/images/appitizers.jpg" alt="image/" class="apps img-full">
             <h3>{{ cat.title }}</h3>
           </a>
         </div>
       </div>
     </div>
   </div>
-</div>
 </div>

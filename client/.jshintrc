@@ -23,6 +23,7 @@
     "jQuery": true,
     "angular": true,
     "console": true,
+    "alert": true,
     "$": true,
     "_": true,
     "moment": true,

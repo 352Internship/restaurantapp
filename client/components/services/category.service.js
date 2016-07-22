@@ -3,7 +3,9 @@
 (function() {
 
   function CategoryResource($resource) {
-    return $resource('/api/categories');
+    return $resource('/api/categories/:categoryId', {
+      'categoryId': '@_id'
+    });
   }
 
   angular.module('served2App')

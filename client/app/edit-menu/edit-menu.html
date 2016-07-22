@@ -1,0 +1,43 @@
+<div class="container">
+  <h1>Edit Menu Items</h1>
+  <ul class="list-group admin-options">
+    <li class="list-group-item"> <strong>Edit Menu Items</strong>
+      <button ng-click="showNewMenuItemInput = !showNewMenuItemInput">Create</button>
+      <ul class="list-group menuItem-list">
+        <li class="list-group-item" ng-repeat="item in EditMenu.menuItems">
+          <div class="menuItem-info">
+            <strong>{{item.title}} ${{item.price}}</strong><br>
+            <span class="text-muted">{{item.description}}</span></br>
+            <div class="editMenuItem-info" ng-show="showDetails">
+              Title: <input type="text" ng-model="item.title"></br>
+              Description: <input type="text" ng-model="item.description"></br>
+              Price: <input type="number" ng-model="item.price"></br>
+              <!-- Options: -->
+              Featured: <input type="checkbox" ng-model="item.featured"></br>
+              Image Url: <input type="text" ng-model="item.imageURL"></br>
+              <!-- Category -->
+              Discount: <input type="number" ng-model="item.discountAmount"></br>
+              Active: <input type="checkbox" ng-model="item.active"></br>
+              <button ng-click="EditMenu.editMenuItem(item); showDetails = !showDetails">Save Item</button>
+            </div>
+          </div>
+          <a ng-click="showDetails = !showDetails" class="edit"><span class="fa fa-edit fa-2x"></span></a>
+          &nbsp;
+          <a ng-click="EditMenu.deleteMenuItem(item)" class="trash"><span class="fa fa-trash fa-2x"></span></a>
+        </li>
+        <div class="newMenuItem-info" ng-show="showNewMenuItemInput">
+          Title <input type="text" ng-model="EditMenu.newMenuItem.title"></br>
+          Description <input type="text" ng-model="EditMenu.newMenuItem.description"></br>
+          Price <input type="number" ng-model="EditMenu.newMenuItem.price"></br>
+          <!-- Options -->
+          Featured: <input type="checkbox" ng-model="EditMenu.newMenuItem.featured"></br>
+          Image Url: <input type="text" ng-model="EditMenu.newMenuItem.imageURL"></br>
+          <!-- Category -->
+          Discount <input type="number" ng-model="EditMenu.newMenuItem.discountAmount"></br>
+          Active: <input type="checkbox" ng-model="EditMenu.newMenuItem.active"></br>
+          <button ng-click="EditMenu.addMenuItem(EditMenu.newMenuItem); showNewMenuItemInput = !showNewMenuItemInput">Add Item</button>
+        </div>
+      </ul>
+    </li>
+  </ul>
+</div>
