@@ -4,9 +4,10 @@
 
 class EditMenuComponent {
 
-  constructor(MenuItem) {
+  constructor(MenuItem, Category) {
     this.MenuItem = MenuItem;
     this.menuItems = MenuItem.query();
+    this.categories = Category.query();
   }
 
   deleteMenuItem(menuItem) {

@@ -86,7 +86,11 @@ export function update(req, res) {
   if (req.body._id) {
     delete req.body._id;
   }
-  return MenuItem.findById(req.params.id).exec()
+  if (req.body.__v) {
+    delete req.body.__v;
+  }
+
+  return MenuItem.findOneAndUpdate({_id: req.params.id},req.body,{upsert: true}).exec()
     .then(handleEntityNotFound(res))
     .then(saveUpdates(req.body))
     .then(respondWithResult(res))

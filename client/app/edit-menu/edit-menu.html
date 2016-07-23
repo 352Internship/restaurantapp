@@ -15,7 +15,7 @@
               <!-- Options: -->
               Featured: <input type="checkbox" ng-model="item.featured"></br>
               Image Url: <input type="text" ng-model="item.imageURL"></br>
-              <!-- Category -->
+              Category: <select multiple ng-multiple="true" ng-model="item.category" ng-options="category._id as category.title for category in EditMenu.categories"></select></br>
               Discount: <input type="number" ng-model="item.discountAmount"></br>
               Active: <input type="checkbox" ng-model="item.active"></br>
               <button ng-click="EditMenu.editMenuItem(item); showDetails = !showDetails">Save Item</button>
@@ -32,7 +32,7 @@
           <!-- Options -->
           Featured: <input type="checkbox" ng-model="EditMenu.newMenuItem.featured"></br>
           Image Url: <input type="text" ng-model="EditMenu.newMenuItem.imageURL"></br>
-          <!-- Category -->
+          Category: <select multiple ng-multiple="true" ng-model="EditMenu.newMenuItem.category" ng-options="category._id as category.title for category in EditMenu.categories"></select></br>
           Discount <input type="number" ng-model="EditMenu.newMenuItem.discountAmount"></br>
           Active: <input type="checkbox" ng-model="EditMenu.newMenuItem.active"></br>
           <button ng-click="EditMenu.addMenuItem(EditMenu.newMenuItem); showNewMenuItemInput = !showNewMenuItemInput">Add Item</button>
