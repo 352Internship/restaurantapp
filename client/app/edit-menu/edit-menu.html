@@ -109,8 +109,11 @@
               <label for="newItem-category">Category</label>
               <select class="form-control" name="newItem-category" multiple ng-multiple="true" ng-model="EditMenu.newMenuItem.category" ng-options="category._id as category.title for category in EditMenu.categories"></select>
             </div>
-            <div class="col-md-12">
-              <button class="btn btn-primary btn-block" ng-click="EditMenu.addMenuItem(EditMenu.newMenuItem); showNewMenuItemInput = !showNewMenuItemInput">Add Item</button>
+            <div class="col-md-6">
+              <button class="btn btn-success btn-block" ng-click="EditMenu.addMenuItem(EditMenu.newMenuItem); showNewMenuItemInput = !showNewMenuItemInput">Add Item</button>
+            </div>
+            <div class="col-md-6">
+              <button class="btn btn-danger btn-block" ng-click="showNewMenuItemInput = !showNewMenuItemInput">Cancel</button>
             </div>
           </div>
         </div>
