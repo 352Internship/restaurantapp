@@ -11,7 +11,7 @@
 
       // get current cart from local storage, if there isn't one, create an empty cart
       var cart = [];
-      getShoppingCart(cart);
+      this.getShoppingCart(cart);
     }
 
     $onInit() {
