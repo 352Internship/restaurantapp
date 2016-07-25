@@ -2,7 +2,7 @@
   <h1>Edit Menu Items</h1>
   <ul class="list-group admin-options">
     <li class="list-group-item"> <strong>Edit Menu Items</strong>
-      <button ng-click="showNewMenuItemInput = !showNewMenuItemInput">Create</button>
+      <a ng-click="showNewMenuItemInput = !showNewMenuItemInput" class="create"><span class="fa fa-plus fa-lg"></span></a>
       <ul class="list-group menuItem-list">
         <li class="list-group-item" ng-repeat="item in EditMenu.menuItems">
           <div class="menuItem-info">
@@ -18,7 +18,7 @@
               Category: <select multiple ng-multiple="true" ng-model="item.category" ng-options="category._id as category.title for category in EditMenu.categories"></select></br>
               Discount: <input type="number" ng-model="item.discountAmount"></br>
               Active: <input type="checkbox" ng-model="item.active"></br>
-              <button ng-click="EditMenu.editMenuItem(item); showDetails = !showDetails">Save Item</button>
+              <button class="saveItemBtn" ng-click="EditMenu.editMenuItem(item); showDetails = !showDetails">Save Item</button>
             </div>
           </div>
           <a ng-click="showDetails = !showDetails" class="edit"><span class="fa fa-edit fa-2x"></span></a>
@@ -35,7 +35,7 @@
           Category: <select multiple ng-multiple="true" ng-model="EditMenu.newMenuItem.category" ng-options="category._id as category.title for category in EditMenu.categories"></select></br>
           Discount <input type="number" ng-model="EditMenu.newMenuItem.discountAmount"></br>
           Active: <input type="checkbox" ng-model="EditMenu.newMenuItem.active"></br>
-          <button ng-click="EditMenu.addMenuItem(EditMenu.newMenuItem); showNewMenuItemInput = !showNewMenuItemInput">Add Item</button>
+          <button class="saveItemBtn" ng-click="EditMenu.addMenuItem(EditMenu.newMenuItem); showNewMenuItemInput = !showNewMenuItemInput">Add Item</button>
         </div>
       </ul>
     </li>
