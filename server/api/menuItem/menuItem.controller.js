@@ -92,7 +92,6 @@ export function update(req, res) {
 
   return MenuItem.findOneAndUpdate({_id: req.params.id},req.body,{upsert: true}).exec()
     .then(handleEntityNotFound(res))
-    .then(saveUpdates(req.body))
     .then(respondWithResult(res))
     .catch(handleError(res));
 }
