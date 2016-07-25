@@ -11,7 +11,7 @@ class CategoryComponent {
 
   $onInit() {
     this.Category.get({categoryId: this.$state.params.categoryId }, function(data) {
-      console.log(data)
+      console.log(data);
     });
   }
 }
