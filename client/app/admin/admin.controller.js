@@ -8,12 +8,13 @@
       this.users = User.query();
     }
 
-    delete(user) {
+    deleteUser(user) {
       user.$remove();
       this.users.splice(this.users.indexOf(user), 1);
     }
+
   }
 
-  angular.module('served2App.admin')
-    .controller('AdminController', AdminController);
+  angular.module('served2App.auth')
+  .controller('AdminController', AdminController);
 })();
