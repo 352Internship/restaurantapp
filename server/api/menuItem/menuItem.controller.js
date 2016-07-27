@@ -61,7 +61,7 @@ function handleError(res, statusCode) {
 
 // Gets a list of MenuItems
 export function index(req, res) {
-  return MenuItem.find().exec()
+  return MenuItem.find({active: true}).exec()
     .then(respondWithResult(res))
     .catch(handleError(res));
 }
@@ -106,7 +106,10 @@ export function destroy(req, res) {
 
 // Gets all MenuItems by their Category Id
 export function findByCategory(req, res) {
-  return MenuItem.find({category: req.params.categoryId}).exec()
+  return MenuItem.find({
+    category: req.params.categoryId,
+    active: true
+  }).exec()
     .then(respondWithResult(res))
     .catch(handleError(res));
 }

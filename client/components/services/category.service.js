@@ -5,6 +5,8 @@
   function CategoryResource($resource) {
     return $resource('/api/categories/:categoryId', {
       'categoryId': '@_id'
+    },{
+      'update': { method: 'PUT' }
     });
   }
 
