@@ -3,8 +3,20 @@
 (function(){
 
 class ItemComponent {
-  constructor() {
-    this.message = 'Hello';
+  constructor($state, MenuItem, shoppingCart) {
+    this.$state = $state;
+    this.MenuItem = MenuItem;
+    this.item = {};
+    this.shoppingCart = shoppingCart;
+  }
+
+
+  $onInit() {
+    var self = this;
+    this.MenuItem.get({id: this.$state.params.itemId }, function(data) {
+      // console.log(data);
+      self.item = data;
+    });
   }
 }
 
