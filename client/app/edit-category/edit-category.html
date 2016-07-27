@@ -1,0 +1,91 @@
+<div class="container">
+  <h1>Category Management</h1>
+  <p class="m-bot-25">
+    Categories are the top level items listed on the home page. Menu items are added to these categories.
+  </p>
+  <div class="clearfix m-bot-25">
+    <button class="btn btn-default pull-right" ng-click="showNewMenuItemInput = !showNewMenuItemInput" type="button"><span class="fa fa-plus fa-lg"></span> New Category</button>
+  </div>
+  <ul class="list-group admin-options">
+    <li class="list-group-item">
+      <ul class="list-group menuItem-list">
+        <li class="list-group-item" ng-repeat="item in EditCategory.categories">
+          <div class="menuItem-info">
+            <div class="row">
+              <div class="col-md-10">
+                <strong>{{item.title}}</strong>
+              </div>
+              <div class="col-md-1">
+                <a ng-click="showEditItemInput = !showEditItemInput" class="edit"><span class="fa fa-edit fa-2x"></span></a>
+              </div>
+              <div class="col-md-1">
+                <a ng-click="EditCategory.deleteCategory(item)" class="trash"><span class="fa fa-trash fa-2x"></span></a>
+              </div>
+              <div class="col-md-12">
+                <span class="text-muted">{{item.description}}</span>
+              </div>
+            </div>
+            <div class="newMenuItem-info" ng-show="showEditItemInput">
+              <div class="row">
+                <div class="form-group col-md-6">
+                  <label for="newItem-title">Title</label>
+                  <input id="newItem-title" class="form-control" type="text" ng-model="item.title" placeholder="Chicken Afredo">
+                </div>
+                <div class="form-group col-md-6">
+                  <div class="checkbox">
+                    <label>
+                      <input name="newItem-active" type="checkbox" ng-model="item.active"> Active
+                    </label>
+                  </div>
+                </div>
+                <div class="form-group col-md-12">
+                  <label for="newItem-description">Description</label>
+                  <textarea class="form-control" id="newItem-description" ng-model="item.description"></textarea>
+                </div>
+                <div class="form-group col-md-12">
+                  <label for="newItem-image">Image Url</label>
+                  <input class="form-control" name="newItem-image" type="text" ng-model="item.imageURL">
+                </div>
+                <div class="col-md-6">
+                  <button class="btn btn-success btn-block" ng-click="EditCategory.editCategoryItem(item); showEditItemInput = !showEditItemInput">Save Category</button>
+                </div>
+                <div class="col-md-6">
+                  <button class="btn btn-danger btn-block" ng-click="showEditItemInput = !showEditItemInput">Cancel</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <div class="newMenuItem-info" ng-show="showNewMenuItemInput">
+          <div class="row">
+            <div class="form-group col-md-6">
+              <label for="newItem-title">Title</label>
+              <input id="newItem-title" class="form-control" type="text" ng-model="EditCategory.newCategory.title" placeholder="Chicken Afredo">
+            </div>
+            <div class="form-group col-md-2">
+              <div class="checkbox">
+                <label>
+                  <input name="newItem-active" type="checkbox" ng-model="EditCategory.newCategory.active"> Active
+                </label>
+              </div>
+            </div>
+            <div class="form-group col-md-12">
+              <label for="newItem-description">Description</label>
+              <textarea class="form-control" id="newItem-description" ng-model="EditCategory.newCategory.description"></textarea>
+            </div>
+            <div class="form-group col-md-12">
+              <label for="newItem-image">Image Url</label>
+              <input class="form-control" name="newItem-image" type="text" ng-model="EditCategory.newCategory.imageURL">
+            </div>
+            <div class="col-md-6">
+              <button class="btn btn-success btn-block" ng-click="EditCategory.addCategory(EditCategory.newCategory); showNewMenuItemInput = !showNewMenuItemInput">Add Item</button>
+            </div>
+            <div class="col-md-6">
+              <button class="btn btn-danger btn-block" ng-click="showNewMenuItemInput = !showNewMenuItemInput">Cancel</button>
+            </div>
+          </div>
+        </div>
+      </ul>
+    </li>
+  </ul>
+</div>

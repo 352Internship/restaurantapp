@@ -1,8 +1,13 @@
 <div class="container">
-  <h1>Edit Menu Items</h1>
+  <h1>Menu Management</h1>
+  <p class="m-bot-25">
+    Add, Edit or Delete menu items.<br /> Set their title, price, description, discount, categories, active and featured state.
+  </p>
+  <div class="clearfix m-bot-25">
+    <button class="btn btn-default pull-right" ng-click="showNewMenuItemInput = !showNewMenuItemInput" type="button"><span class="fa fa-plus fa-lg"></span> New Menu Item</button>
+  </div>
   <ul class="list-group admin-options">
-    <li class="list-group-item"> <strong>Edit Menu Items</strong>
-      <a ng-click="showNewMenuItemInput = !showNewMenuItemInput" class="create"><span class="fa fa-plus fa-lg"></span></a>
+    <li class="list-group-item">
       <ul class="list-group menuItem-list">
         <li class="list-group-item" ng-repeat="item in EditMenu.menuItems">
           <div class="menuItem-info">
