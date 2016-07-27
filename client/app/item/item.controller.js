@@ -7,8 +7,6 @@ class ItemComponent {
     this.$state = $state;
     this.MenuItem = MenuItem;
     this.item = {};
-
-    var cart = [];
   }
 
 
@@ -21,23 +19,18 @@ class ItemComponent {
   }
 
   addToCart(item) {
-    console.log('clicked');
-
     var shoppingCart = [];
 
-
+    // Get cart from localStorage if it exists, if not create an empty cart
     if (localStorage.getItem('cart')) {
       shoppingCart = JSON.parse(localStorage.getItem('cart'));
     } else {
       localStorage.setItem('cart', JSON.stringify([]));
     }
-    console.log('cart', shoppingCart);
 
+    //push item to cart and add to shopping cart
     shoppingCart.push(item);
     localStorage.setItem('cart', JSON.stringify(shoppingCart));
-
-
-    console.log('cart', shoppingCart);
   }
 }
 
