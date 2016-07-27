@@ -1,7 +1,6 @@
 
 .buffalo {
-  width: 100%;
-  // margin-left: 95%x;
+  width: 100%
   }
 
   .wings{
@@ -33,31 +32,44 @@ h3 {
 // p{
 //   margin-left: 40px;
 // }
-.confirm_item_button {
-  width: 50%;
-  height: 100%;
-  color:yellow;
-}
+// .confirm_item_button {
+//   width: 50%;
+//   height: 100%;
+//   color:yellow;
+// }
 
 .btn-order {
   background-color:yellow;
   color: black;
   border-style:inset;
 }
-// .btn-order:hover{
-//   background-color: white; /* Green */
-//     color: black;
-// }
+
+.btn-default{
+  background-color: white;;
+  border-color: yellow;
+  font-weight:bold;
+}
 
 .checkbox {
   color:yellow;
   font-size: 20px;
   line-height: 1.2;
   margin-bottom: 15px;
-
+  -moz-transition:-moz-transform 0.2s ease-in;
+  -webkit-transition:-webkit-transform 0.2s ease-in;
+  -o-transition:-o-transform 0.2s ease-in;
+  -moz-transition:-moz-transform 0.2s ease-out;
+  -webkit-transition:-webkit-transform 0.2s ease-out;
+  -o-transition:-o-transform 0.2s ease-out;
+}
+.checkbox:hover{
+  color:white;
+  -moz-transform:scale(1.03);
+ -webkit-transform:scale(1.03);
+ -o-transform:scale(1.03);
 }
 
-.item-details {
+.item-details{
   margin-bottom: 25px;
   font-size: 25px;
 }
@@ -71,6 +83,7 @@ h3 {
   font-weight: bold;
   transition-duration: 0.4s;
 }
+
 .btn:hover{
   color: yellow;
   background-color: black;
