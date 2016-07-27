@@ -15,7 +15,7 @@
       <div class="main-menu">
         <div ng-repeat="cat in $ctrl.categories" class="col-md-4">
           <a ui-sref="category({ categoryId: cat._id })" title="{{ cat.description }}">
-            <img src="/assets/images/appitizers.jpg" alt="image/" class="apps img-full">
+            <img src="{{ cat.imageURL }}" alt="image/" class="apps img-full">
             <h3>{{ cat.title }}</h3>
           </a>
         </div>

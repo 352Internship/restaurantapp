@@ -10,6 +10,10 @@ class NavbarController {
     this.getCurrentUser = Auth.getCurrentUser;
   }
 
+  showCart() {
+    console.log('Cart:');
+  }
+
 }
 
 angular.module('served2App')
