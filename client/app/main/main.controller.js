@@ -40,7 +40,7 @@
       if (localStorage.getItem('cart')) {
         cart = JSON.parse(localStorage.getItem('cart'));
       } else {
-        localStorage.setItem('cart', JSON.stringify(cart));
+        localStorage.setItem('cart', JSON.stringify([]));
       }
       console.log(JSON.parse(localStorage.getItem('cart')));
     }
