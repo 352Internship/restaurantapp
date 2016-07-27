@@ -36,14 +36,6 @@
       this.$http.delete('/api/things/' + thing._id);
     }
 
-    getShoppingCart(cart) {
-      if (localStorage.getItem('cart')) {
-        cart = JSON.parse(localStorage.getItem('cart'));
-      } else {
-        localStorage.setItem('cart', JSON.stringify([]));
-      }
-      console.log(JSON.parse(localStorage.getItem('cart')));
-    }
   }
 
   angular.module('served2App')

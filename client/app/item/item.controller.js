@@ -18,21 +18,6 @@ class ItemComponent {
       self.item = data;
     });
   }
-
-  addToCart(item) {
-    var shoppingCart = [];
-
-    // Get cart from localStorage if it exists, if not create an empty cart
-    if (localStorage.getItem('cart')) {
-      shoppingCart = JSON.parse(localStorage.getItem('cart'));
-    } else {
-      localStorage.setItem('cart', JSON.stringify([]));
-    }
-
-    //push item to cart and add to shopping cart
-    shoppingCart.push(item);
-    localStorage.setItem('cart', JSON.stringify(shoppingCart));
-  }
 }
 
 angular.module('served2App')
