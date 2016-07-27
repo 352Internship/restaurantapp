@@ -6,7 +6,15 @@
     return $resource('/api/menuItems/:id', {
       id: '@_id'
     }, {
-      'update': { method: 'PUT' }
+      update: { method: 'PUT' },
+      getAllByCategoryId: {
+        method:'GET',
+        params: {
+          categoryId: '@categoryId'
+        },
+        url: '/api/menuItems/category/:categoryId',
+        isArray: true
+      }
     });
   }
 
