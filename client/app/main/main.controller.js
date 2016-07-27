@@ -8,10 +8,6 @@
       this.$http = $http;
       this.Category = Category;
       this.categories = [];
-
-      // get current cart from local storage, if there isn't one, create an empty cart
-      var cart = [];
-      this.getShoppingCart(cart);
     }
 
     $onInit() {

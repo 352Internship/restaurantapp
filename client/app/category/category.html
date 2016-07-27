@@ -7,7 +7,7 @@
       ng-repeat="item in Category.menuItems"
     >
       <a class="menu-item" ui-sref="item({ itemId: item._id })" title="{{ item.description }}">
-        <img src="/assets/images/appitizers.jpg" alt="{{item.title}}" class="menu-item__image img-full">
+        <img src="{{ item.imageURL }}" alt="{{item.title}}" class="menu-item__image img-full">
         <h3 class="menu-item__title">{{item.title}}</h3>
         <p class="menu-item__description">{{item.description}}</p>
       </a>
