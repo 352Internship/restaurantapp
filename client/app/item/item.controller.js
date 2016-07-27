@@ -3,10 +3,11 @@
 (function(){
 
 class ItemComponent {
-  constructor($state, MenuItem) {
+  constructor($state, MenuItem, shoppingCart) {
     this.$state = $state;
     this.MenuItem = MenuItem;
     this.item = {};
+    this.shoppingCart = shoppingCart;
   }
 
 
