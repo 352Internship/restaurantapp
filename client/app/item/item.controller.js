@@ -9,28 +9,35 @@ class ItemComponent {
     this.item = {};
 
     var cart = [];
-    this.getShoppingCart(cart);
   }
 
 
   $onInit() {
     var self = this;
     this.MenuItem.get({id: this.$state.params.itemId }, function(data) {
-      console.log(data);
+      // console.log(data);
       self.item = data;
     });
   }
 
-  getShoppingCart(cart) {
-    if (localStorage.getItem("cart")) {
-      cart = JSON.parse(localStorage.getItem("cart"));
-    }
-    localStorage.setItem("cart", JSON.stringify(cart));
-  }
-
   addToCart(item) {
-    this.cart.append(item);
-    console.log("cart", this.cart);
+    console.log('clicked');
+
+    var shoppingCart = [];
+
+
+    if (localStorage.getItem('cart')) {
+      shoppingCart = JSON.parse(localStorage.getItem('cart'));
+    } else {
+      localStorage.setItem('cart', JSON.stringify([]));
+    }
+    console.log('cart', shoppingCart);
+
+    shoppingCart.push(item);
+    localStorage.setItem('cart', JSON.stringify(shoppingCart));
+
+
+    console.log('cart', shoppingCart);
   }
 }
 
