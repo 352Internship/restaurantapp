@@ -1,17 +1,4 @@
-<header class="hero-unit" id="banner">
-  <div class="container">
-    <!-- <div class="col-md-3"> -->
-      <img src="/assets/images/buffalo.png" alt="image/" class="buffalo" >
-    </div>
-    <!-- <div class="col-md-6">
-      <h2>Buffalo Wild Wings</h2>
-    </div>
-    <div class="col-md-3"> -->
-      <!-- <img src="/assets/images/beer.jpeg" alt="image/" class="beer"> -->
-    </div>
-  </div>
-</header>
-<div class="container">
+<div class="container item-details">
   <div class="row">
     <div class="col-md-12">
       <div class="row">
@@ -20,13 +7,11 @@
             <!-- <h2 class="page-header"><h2>Back To Main Menu:</h2></a> -->
           </div>
           <div class="col-md-4">
-            <img src="/assets/images/wings_boneless12.png" alt="image/" class="wings">
+            <img src="{{ Item.item.imageURL }}" alt="image/" class="wings">
           </div>
           <div class="col-md-8">
             <h3>Order Details:</h3>
-            <div class="item-details">
-              Bacon ipsum dolor amet ball tip capicola bacon drumstick kevin hamburger tail tri-tip cow doner beef ribs picanha rump. Shankle pastrami bacon jerky. Beef ribs kielbasa pastrami pancetta andouille pork cupim tongue beef jerky ground round doner salami corned beef shankle. Spare ribs bacon venison kielbasa t-bone jowl, doner leberkas.
-            </div>
+            <div class="item-details">{{Item.item.description}}</div>
             <div class="item-options">
               <div class="checkbox">
                 <label><input type="checkbox" value="">Option 1</label>
@@ -49,7 +34,7 @@
             </div>
             <div>
               <button type="cancel" class="btn btn-md btn-default" role="button">Cancel</button>
-              <button type="submit" class="btn btn-lg btn-order" role="button">Confirm Order</button>
+              <button ng-click="Item.shoppingCart.addItem(Item.item)" type="submit" class="btn btn-lg btn-order" role="button">Add to Cart</button>
             </div>
           </div>
         </div>

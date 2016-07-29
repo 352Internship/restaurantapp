@@ -61,7 +61,7 @@ function handleError(res, statusCode) {
 
 // Gets a list of MenuItems
 export function index(req, res) {
-  return MenuItem.find().exec()
+  return MenuItem.find({active: true}).exec()
     .then(respondWithResult(res))
     .catch(handleError(res));
 }
@@ -86,9 +86,12 @@ export function update(req, res) {
   if (req.body._id) {
     delete req.body._id;
   }
-  return MenuItem.findById(req.params.id).exec()
+  if (req.body.__v) {
+    delete req.body.__v;
+  }
+
+  return MenuItem.findOneAndUpdate({_id: req.params.id},req.body,{upsert: true}).exec()
     .then(handleEntityNotFound(res))
-    .then(saveUpdates(req.body))
     .then(respondWithResult(res))
     .catch(handleError(res));
 }
@@ -103,7 +106,10 @@ export function destroy(req, res) {
 
 // Gets all MenuItems by their Category Id
 export function findByCategory(req, res) {
-  return MenuItem.find({category: req.params.categoryId}).exec()
+  return MenuItem.find({
+    category: req.params.categoryId,
+    active: true
+  }).exec()
     .then(respondWithResult(res))
     .catch(handleError(res));
 }
