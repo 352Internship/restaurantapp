@@ -3,7 +3,7 @@
     <div class="col-md-12">
       <div class="row">
         <div class="main-menu-backto">
-          <a href="">
+          <a href="/">
             <h2 class="page-header"><h2>Back To Main Menu:</h2></a>
           </div>
           <div class="col-md-4">
@@ -18,7 +18,7 @@
               </div>
             </div>
             <div>
-              <button type="cancel" class="btn btn-md btn-default" role="button">Cancel</button>
+              <button ng-click="Item.goBack()" type="cancel" class="btn btn-md btn-danger" role="button">Cancel</button>
               <button ng-click="Item.shoppingCart.addItem(Item.item)" type="submit" class="btn btn-lg btn-order" role="button">Add to Cart</button>
             </div>
           </div>

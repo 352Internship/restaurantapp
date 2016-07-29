@@ -18,6 +18,10 @@ class ItemComponent {
       self.item = data;
     });
   }
+
+  goBack() {
+    history.back();
+  }
 }
 
 angular.module('served2App')
