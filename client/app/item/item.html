@@ -1,0 +1,45 @@
+<div class="container item-details">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="row">
+        <div class="main-menu-backto">
+          <a href="">
+            <h2 class="page-header"><h2>Back To Main Menu:</h2></a>
+          </div>
+          <div class="col-md-4">
+            <img src="{{ Item.item.imageURL }}" alt="image/" class="wings">
+          </div>
+          <div class="col-md-8">
+            <h3>Order Details:</h3>
+            <div class="item-details">{{Item.item.description}}</div>
+            <div class="item-options">
+              <div class="checkbox">
+                <label><input type="checkbox" value="">Option 1</label>
+              </div>
+              <div class="checkbox">
+                <label><input type="checkbox" value="">Option 2</label>
+              </div>
+              <div class="checkbox">
+                <label><input type="checkbox" value="">Option 3</label>
+              </div>
+              <div class="checkbox">
+                <label><input type="checkbox" value="">Option 4</label>
+              </div>
+              <div class="checkbox">
+                <label><input type="checkbox" value="">Option 5</label>
+              </div>
+              <div class="checkbox">
+                <label><input type="checkbox" value="">Option 6</label>
+              </div>
+            </div>
+            <div>
+              <button type="cancel" class="btn btn-md btn-default" role="button">Cancel</button>
+              <button ng-click="Item.shoppingCart.addItem(Item.item)" type="submit" class="btn btn-lg btn-order" role="button">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

@@ -7,7 +7,7 @@ var OrderSchema = new mongoose.Schema({
     menuItem: { type: Schema.Types.ObjectId, ref: 'MenuItem' },
     quantity: Number,
     price: Number,
-    discout: Number
+    discount: Number
   }],
   totalPrice: Number,
   specialInstructions: String,

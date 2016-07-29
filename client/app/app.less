@@ -1,6 +1,8 @@
 @import '../bower_components/bootstrap/less/bootstrap.less';
 @import '../bower_components/font-awesome/less/font-awesome.less';
 
+@import 'variables';
+
 @icon-font-path: '../bower_components/bootstrap/fonts/';
 @fa-font-path: '../bower_components/font-awesome/fonts';
 
@@ -15,10 +17,47 @@
   padding: 0.2em 0;
 }
 
+body {
+  background-color: #000;
+  color: white;
+}
+
+.img-full {
+  width: 50%;
+}
+
+h1, h2, h3 {
+  font-family: 'Sigmar One', cursive;
+
+}
+
+h2{
+  margin-top: 50px;
+  font-size:px;
+
+}
+
+.m-bot-25 {
+  margin-bottom: 25px;
+}
+
+.no-style {
+  text-decoration: none;
+  &:hover, &:focus, &:active {
+    text-decoration: none;
+  }
+}
+
 /* inject:less */
 @import 'admin/admin';
+@import 'category/category';
+@import 'edit-category/edit-category';
+@import 'edit-menu/edit-menu';
+@import 'item/item';
 @import 'main/main';
 @import 'order/order';
+@import 'variables';
 @import '../components/footer/footer';
 @import '../components/modal/modal';
+@import '../components/navbar/navbar';
 /* endinject */

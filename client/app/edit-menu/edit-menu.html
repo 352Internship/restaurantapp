@@ -1,0 +1,128 @@
+<div class="container">
+  <h1>Menu Management</h1>
+  <p class="m-bot-25">
+    Add, Edit or Delete menu items.<br /> Set their title, price, description, discount, categories, active and featured state.
+  </p>
+  <div class="clearfix m-bot-25">
+    <button class="btn btn-default pull-right" ng-click="showNewMenuItemInput = !showNewMenuItemInput" type="button"><span class="fa fa-plus fa-lg"></span> New Menu Item</button>
+  </div>
+  <ul class="list-group admin-options">
+    <li class="list-group-item">
+      <ul class="list-group menuItem-list">
+        <li class="list-group-item" ng-repeat="item in EditMenu.menuItems">
+          <div class="menuItem-info">
+            <div class="row">
+              <div class="col-md-10">
+                <strong>{{item.title}} ${{item.price}}</strong>
+              </div>
+              <div class="col-md-1">
+                <a ng-click="showEditItemInput = !showEditItemInput" class="edit"><span class="fa fa-edit fa-2x"></span></a>
+              </div>
+              <div class="col-md-1">
+                <a ng-click="EditMenu.deleteMenuItem(item)" class="trash"><span class="fa fa-trash fa-2x"></span></a>
+              </div>
+              <div class="col-md-12">
+                <span class="text-muted">{{item.description}}</span>
+              </div>
+            </div>
+            <div class="newMenuItem-info" ng-show="showEditItemInput">
+              <div class="row">
+                <div class="form-group col-md-6">
+                  <label for="newItem-title">Title</label>
+                  <input id="newItem-title" class="form-control" type="text" ng-model="item.title" placeholder="Chicken Afredo">
+                </div>
+                <div class="form-group col-md-2">
+                  <label for="newItem-price">Price</label>
+                  <input class="form-control" name="newItem-price" type="number" ng-model="item.price">
+                </div>
+                <div class="form-group col-md-2">
+                  <label for="newItem-discount">Discount</label>
+                  <input class="form-control" name="newItem-discount" type="number" ng-model="item.discountAmount">
+                </div>
+                <div class="form-group col-md-2">
+                  <div class="checkbox">
+                    <label>
+                      <input id="newItem-featured" type="checkbox" ng-model="item.featured"> Featured
+                    </label>
+                  </div>
+                  <div class="checkbox">
+                    <label>
+                      <input name="newItem-active" type="checkbox" ng-model="item.active"> Active
+                    </label>
+                  </div>
+                </div>
+                <div class="form-group col-md-12">
+                  <label for="newItem-description">Description</label>
+                  <textarea class="form-control" id="newItem-description" ng-model="item.description"></textarea>
+                </div>
+                <div class="form-group col-md-12">
+                  <label for="newItem-image">Image Url</label>
+                  <input class="form-control" name="newItem-image" type="text" ng-model="item.imageURL">
+                </div>
+                <div class="form-group col-md-12">
+                  <label for="newItem-category">Category</label>
+                  <select class="form-control" name="newItem-category" multiple ng-multiple="true" ng-model="item.category" ng-options="category._id as category.title for category in EditMenu.categories"></select>
+                </div>
+                <div class="col-md-6">
+                  <button class="btn btn-success btn-block" ng-click="EditMenu.editMenuItem(item); showEditItemInput = !showEditItemInput">Save Item</button>
+                </div>
+                <div class="col-md-6">
+                  <button class="btn btn-danger btn-block" ng-click="showEditItemInput = !showEditItemInput">Cancel</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- <a ng-click="showEditItemInput = !showEditItemInput" class="edit"><span class="fa fa-edit fa-2x"></span></a>
+          &nbsp;
+          <a ng-click="EditMenu.deleteMenuItem(item)" class="trash"><span class="fa fa-trash fa-2x"></span></a> -->
+        </li>
+        <div class="newMenuItem-info" ng-show="showNewMenuItemInput">
+          <div class="row">
+            <div class="form-group col-md-6">
+              <label for="newItem-title">Title</label>
+              <input id="newItem-title" class="form-control" type="text" ng-model="EditMenu.newMenuItem.title" placeholder="Chicken Afredo">
+            </div>
+            <div class="form-group col-md-2">
+              <label for="newItem-price">Price</label>
+              <input class="form-control" name="newItem-price" type="number" ng-model="EditMenu.newMenuItem.price">
+            </div>
+            <div class="form-group col-md-2">
+              <label for="newItem-discount">Discount</label>
+              <input class="form-control" name="newItem-discount" type="number" ng-model="EditMenu.newMenuItem.discountAmount">
+            </div>
+            <div class="form-group col-md-2">
+              <div class="checkbox">
+                <label>
+                  <input id="newItem-featured" type="checkbox" ng-model="EditMenu.newMenuItem.featured"> Featured
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input name="newItem-active" type="checkbox" ng-model="EditMenu.newMenuItem.active"> Active
+                </label>
+              </div>
+            </div>
+            <div class="form-group col-md-12">
+              <label for="newItem-description">Description</label>
+              <textarea class="form-control" id="newItem-description" ng-model="EditMenu.newMenuItem.description"></textarea>
+            </div>
+            <div class="form-group col-md-12">
+              <label for="newItem-image">Image Url</label>
+              <input class="form-control" name="newItem-image" type="text" ng-model="EditMenu.newMenuItem.imageURL">
+            </div>
+            <div class="form-group col-md-12">
+              <label for="newItem-category">Category</label>
+              <select class="form-control" name="newItem-category" multiple ng-multiple="true" ng-model="EditMenu.newMenuItem.category" ng-options="category._id as category.title for category in EditMenu.categories"></select>
+            </div>
+            <div class="col-md-6">
+              <button class="btn btn-success btn-block" ng-click="EditMenu.addMenuItem(EditMenu.newMenuItem); showNewMenuItemInput = !showNewMenuItemInput">Add Item</button>
+            </div>
+            <div class="col-md-6">
+              <button class="btn btn-danger btn-block" ng-click="showNewMenuItemInput = !showNewMenuItemInput">Cancel</button>
+            </div>
+          </div>
+        </div>
+      </ul>
+    </li>
+  </ul>
+</div>
