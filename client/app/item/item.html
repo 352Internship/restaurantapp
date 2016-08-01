@@ -2,15 +2,12 @@
   <div class="row">
     <div class="col-md-12">
       <div class="row">
-        <div class="main-menu-backto">
-          <a href="/">
-            <h2 class="page-header"><h2>Back To Main Menu:</h2></a>
-          </div>
+        <div class="">
           <div class="col-md-4">
-            <img src="{{ Item.item.imageURL }}" alt="image/" class="wings">
+            <h2 class="text-center">{{ Item.item.title }}</h2>
+            <img src="{{ Item.item.imageURL }}" alt="image/" class="item__image">
           </div>
           <div class="col-md-8">
-            <h3>Order Details:</h3>
             <div class="item-details">{{Item.item.description}}</div>
             <div class="item-options" ng-repeat="option in Item.item.options">
               <div>
@@ -18,7 +15,7 @@
               </div>
             </div>
             <div>
-              <button ng-click="Item.goBack()" type="cancel" class="btn btn-md btn-danger" role="button">Cancel</button>
+              <button ng-click="Item.goBack()" type="cancel" class="btn btn-lg btn-danger" role="button">Cancel</button>
               <button ng-click="Item.shoppingCart.addItem(Item.item)" type="submit" class="btn btn-lg btn-order" role="button">Add to Cart</button>
             </div>
           </div>

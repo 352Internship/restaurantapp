@@ -32,7 +32,7 @@ class CategoryComponent {
         .$promise
         .then(res => this.currentCategory = res)
         .catch(error => {
-          alert('Failed to category data.');
+          alert('Failed to load category data.');
           console.error(error);
         });
 
