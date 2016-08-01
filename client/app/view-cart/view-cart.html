@@ -1,1 +1,21 @@
-<div>This is the view-cart view.</div>
+<div class="container">
+  <h1>Order Confirmation</h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Item</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="item in ViewCart.items">
+        <td>{{item.title}}</td>
+        <td>{{item.price}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <div>
+    <button ng-click="ViewCart.goBack()" type="cancel" class="btn btn-md btn-danger" role="button">Cancel</button>
+    <button ng-click="ViewCart.placeOrder(ViewCart.shoppingCart.getItems())" type="submit" class="btn btn-lg btn-success" role="button">Place Order</button>
+  </div>
+</div>

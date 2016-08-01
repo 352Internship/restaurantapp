@@ -5,8 +5,10 @@ function shoppingCartService() {
 
   this.addItem = (item) => {
     this.getItems();
-    this.items.push(item);
-    localStorage.setItem('cart', JSON.stringify(this.items));
+    if (item) {
+      this.items.push(item);
+      localStorage.setItem('cart', JSON.stringify(this.items));
+    }
   }
 
   this.getItems = () => {
