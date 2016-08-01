@@ -18,8 +18,11 @@ function shoppingCartService() {
       this.items = [];
       localStorage.setItem('cart', JSON.stringify(this.items));
     }
-    console.log('getItems', this.items);
     return this.items;
+  }
+
+  this.removeAll = () => {
+    localStorage.setItem('cart', JSON.stringify([]));
   }
 }
 
