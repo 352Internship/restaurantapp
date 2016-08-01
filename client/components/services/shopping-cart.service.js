@@ -5,8 +5,10 @@ function shoppingCartService() {
 
   this.addItem = (item) => {
     this.getItems();
-    this.items.push(item);
-    localStorage.setItem('cart', JSON.stringify(this.items));
+    if (item) {
+      this.items.push(item);
+      localStorage.setItem('cart', JSON.stringify(this.items));
+    }
   }
 
   this.getItems = () => {
@@ -16,8 +18,11 @@ function shoppingCartService() {
       this.items = [];
       localStorage.setItem('cart', JSON.stringify(this.items));
     }
-    console.log('getItems', this.items);
     return this.items;
+  }
+
+  this.removeAll = () => {
+    localStorage.setItem('cart', JSON.stringify([]));
   }
 }
 
