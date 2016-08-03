@@ -1,9 +1,9 @@
 <div class="container">
   <h1>Order Confirmation</h1>
-  <table class="table">
+  <table class="view-cart-table table table-striped">
     <thead>
       <tr>
-        <th>Item</th>
+        <th style="width: 80%">Item</th>
         <th>Price</th>
       </tr>
     </thead>
@@ -14,8 +14,8 @@
       </tr>
     </tbody>
   </table>
-  <div>
-    <button ng-click="ViewCart.goBack()" type="cancel" class="btn btn-md btn-danger" role="button">Cancel</button>
+  <div class="view-cart-actions">
+    <button ng-click="ViewCart.goBack()" type="cancel" class="btn btn-lg btn-danger" role="button">Cancel</button>
     <button ng-click="ViewCart.placeOrder(ViewCart.shoppingCart.getItems())" type="submit" class="btn btn-lg btn-success" role="button">Place Order</button>
   </div>
 </div>
