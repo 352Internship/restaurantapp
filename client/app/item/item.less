@@ -15,7 +15,7 @@
   .item__image {
     width: 100%;
   }
-  
+
   a {
     color: yellow;
     text-decoration: none;
@@ -40,6 +40,15 @@
     background-color:yellow;
     color: black;
     border-style:inset;
+    transition: all .5s ease-in-out;
+
+    &.added[disabled] {
+      color: white;
+      background-color: green;
+      width: 127px;
+      opacity: 1;
+      filter: none;
+    }
   }
 
   .checkbox {
