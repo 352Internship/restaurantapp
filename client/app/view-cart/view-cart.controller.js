@@ -8,6 +8,8 @@ class ViewCartComponent {
     this.Order = Order;
     this.shoppingCart = shoppingCart;
 
+    this.orders = this.Order.query();
+    console.log(this.orders.length);
 
     this.items = this.shoppingCart.getItems();
     console.log(this.items);
@@ -17,6 +19,7 @@ class ViewCartComponent {
 
   placeOrder(shoppingCart) {
     var newItems = [];
+    var subtotal = 0;
     for (var i = 0, len = shoppingCart.length; i < len; i++) {
       if (shoppingCart[i]) {
         newItems.push({
@@ -24,18 +27,28 @@ class ViewCartComponent {
           price: shoppingCart[i].price,
           discount: shoppingCart[i].discount
         });
+        subtotal = subtotal + (shoppingCart[i].price - (shoppingCart[i].discount || 0));
       }
     }
     var newOrder = {
-      items: newItems
+      items: newItems,
+      totalPrice: subtotal
     };
-    if (newOrder) {
-      this.Order
-        .save(newOrder)
-        .$promise
-        .then(this.shoppingCart.removeAll())
-        .catch(() => alert('Placing order failed.'));
-    };
+    var confirm = window.confirm("Your total is $"+ subtotal.toFixed(2));
+    if (confirm == true) {
+      if (newOrder) {
+        this.Order
+          .save(newOrder)
+          .$promise
+          .then(window.alert("You are order number " + this.orders.length%20))
+          .then(this.shoppingCart.removeAll())
+          .catch(() => alert('Placing order failed.'));
+      };
+      this.items = this.shoppingCart.getItems();
+    } else {
+        //
+    }
+
   }
 
   goBack() {
